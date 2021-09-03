@@ -1,38 +1,106 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.search-container {
+  background-image: url("pattern-bg.png");
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  min-height: 250px;
+  padding: 30px;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 2rem;
+  margin: 0;
   color: white;
+  padding-bottom: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.search {
+  width: 100%;
+  max-width: 600px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.search-input {
+  height: 55px;
+  border-radius: 10px;
+}
+
+.search-btn {
+  border-radius: 10px;
+}
+
+.search .icon {
+  padding: 2px;
+  height: 25px;
+  width: 25px;
+}
+
+.results-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.results-card {
+  position: absolute;
+  z-index: 1;
+  width: 80%;
+  margin-top: -70px;
+  border-radius: 10px;
+  padding: 2%;
+}
+
+.result {
+  padding: 10px;
+  border-right: solid 1px gainsboro;
+}
+
+.result.last {
+  border-right: none;
+}
+
+.result .label {
+  margin: 0;
+  font-size: 0.85rem;
+  opacity: 70%;
+}
+
+.result .value {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.map-container {
+  height: 75vh;
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+  .results-card {
+    width: 90%;
+    margin-top: -80px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .result {
+    padding: 8px;
+    border-right: none;
+  }
+
+  .result.last {
+    border-right: none;
+  }
+
+  .result .label {
+    margin: 0;
+    font-size: 0.65rem;
+    opacity: 70%;
+  }
+
+  .result .value {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
   }
 }
