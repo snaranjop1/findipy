@@ -63,7 +63,7 @@
 .result .label {
   margin: 0;
   font-size: 0.85rem;
-  opacity: 70%;
+  color: gray;
 }
 
 .result .value {
