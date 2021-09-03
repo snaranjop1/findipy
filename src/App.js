@@ -4,8 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 import mapboxgl from "!mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
 import "./App.css";
 
-mapboxgl.accessToken =
-  "pk.eyJ1Ijoic25hcmFuam9wMSIsImEiOiJja3Qzc3h6bTIwYXUyMm5ucWF1cWk3czVxIn0.b0BVZtU0UK0qjum74p5rhw";
+mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_GL_KEY;
 
 function App() {
   const mapContainer = useRef(null);
@@ -42,7 +41,7 @@ function App() {
         .then((response) => response.json())
         .then((dataIp) => {
           fetch(
-            `https://geo.ipify.org/api/v1?apiKey=at_PjQlAKjjfMBBLZzuHlbkDEcuxRKaX&ipAddress=${dataIp.ip}`
+            `https://geo.ipify.org/api/v1?apiKey=${process.env.REACT_APP_IPIFY_KEY}&ipAddress=${dataIp.ip}`
           )
             .then((response) => response.json())
             .then((data) => {
@@ -73,7 +72,7 @@ function App() {
     e.preventDefault();
     const type = checkIp(ip) ? "ipAddress" : "domain";
     fetch(
-      `https://geo.ipify.org/api/v1?apiKey=at_PjQlAKjjfMBBLZzuHlbkDEcuxRKaX&${type}=${ip}`
+      `https://geo.ipify.org/api/v1?apiKey=${process.env.REACT_APP_IPIFY_KEY}&${type}=${ip}`
     )
       .then((response) => response.json())
       .then((data) => {
