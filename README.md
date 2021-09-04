@@ -1,5 +1,5 @@
 # Findipy - IP address tracker
-
+![findipy](https://user-images.githubusercontent.com/33071623/132078186-1826f113-86af-4394-862e-6ceced3e89b4.png)
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## The challenge
